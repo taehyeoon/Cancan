@@ -15,4 +15,9 @@ public class Movement : MonoBehaviour
         Vector3 dirInWorld = transform.TransformDirection(dirInLocal);
         _rb.MovePosition(transform.position + dirInWorld * Time.fixedDeltaTime);
     }
+
+    // Rotation based on mouse input
+    public void Rotate(Vector3 rotAngle){
+        _rb.rotation = Quaternion.Euler(_rb.rotation.eulerAngles + rotAngle);
+    }
 }

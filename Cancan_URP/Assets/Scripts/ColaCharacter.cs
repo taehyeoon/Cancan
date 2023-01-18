@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColaCharacter : Character
 {
-    public ColaCharacter() : base(0, 100, 90, 1, 10, 5)
+    public ColaCharacter() : base(0, 100, 90, 1, 10, 5, 3)
     {
 
     }
@@ -14,7 +14,6 @@ public class ColaCharacter : Character
     }
     void Update()
     {
-        GetHealth();
-        GetSpeed();
+
     }
 }

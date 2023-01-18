@@ -6,15 +6,17 @@ public class Character : MonoBehaviour
 {
     protected float _minHealth;
     protected float _maxHealth;
-    protected float _health;
+    public float _health {get; private set;}
 
     protected float _minSpeed;
     protected float _maxSpeed;
-    protected float _speed;
+    public float _speed {get; private set;}
+
+    public float _rotSpeed {get; set;}
 
 
     public Character(float minHealth, float maxHealth, float health, 
-        float minSpeed, float maxSpeed, float speed)
+        float minSpeed, float maxSpeed, float speed, float rotSpeed)
     {
         _minHealth = minHealth;
         _maxHealth = maxHealth;
@@ -23,18 +25,10 @@ public class Character : MonoBehaviour
         _minSpeed = minSpeed;
         _maxSpeed = maxSpeed;
         _speed = speed;
+
+        _rotSpeed = rotSpeed;
     }
 
-    public float GetHealth() 
-    {
-        Debug.Log("health_base : " + _health);
-        return _health; 
-    }
-    public float GetSpeed() 
-    { 
-        Debug.Log("speed_base : " + _speed);
-        return _speed; 
-    }
     /* �������� �԰� ü���� 0������ ���, return false */
     public bool ApplyDamage(float damage) 
     {
