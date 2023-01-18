@@ -12,11 +12,12 @@ public class Character : MonoBehaviour
     protected float _maxSpeed;
     public float _speed {get; private set;}
 
-    public float _rotSpeed {get; set;}
+    public float _horizontalrotSpeed {get; set;}
+    public float _verticalrotSpeed {get; set;}
 
 
     public Character(float minHealth, float maxHealth, float health, 
-        float minSpeed, float maxSpeed, float speed, float rotSpeed)
+        float minSpeed, float maxSpeed, float speed, float horizontalrotSpeed, float verticalrotSpeed)
     {
         _minHealth = minHealth;
         _maxHealth = maxHealth;
@@ -26,10 +27,11 @@ public class Character : MonoBehaviour
         _maxSpeed = maxSpeed;
         _speed = speed;
 
-        _rotSpeed = rotSpeed;
+        _horizontalrotSpeed = horizontalrotSpeed;
+        _verticalrotSpeed = verticalrotSpeed;
     }
 
-    /* �������� �԰� ü���� 0������ ���, return false */
+    /* if character dead after attack, return false */
     public bool ApplyDamage(float damage) 
     {
         if(_health - damage <= 0)
@@ -42,7 +44,7 @@ public class Character : MonoBehaviour
             return true;
         }
     }
-    /* ���� ü���� 0������ ���, return false */
+    /* if current helth is less than zero, return false */
     public bool ApplyHeal(float heal)
     {
         if (_health <= 0)

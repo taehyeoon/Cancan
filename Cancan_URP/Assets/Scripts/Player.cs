@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         if(_isMoving)
             _movement.Move(new Vector3(_input.btnHorizontal, 0, _input.btnVertical));
 
-        _movement.Rotate(new Vector3(0,_input.mouseDX * _character._rotSpeed, 0));
+        _movement.Rotate(new Vector3(0,_input.mouseDX * _character._horizontalrotSpeed, 0));
         // if(_isJumping)
 
 
