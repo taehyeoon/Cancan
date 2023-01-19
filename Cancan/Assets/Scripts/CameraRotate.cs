@@ -21,9 +21,12 @@ public class CameraRotate : MonoBehaviour
         transform.localRotation = Quaternion.Euler(currentCameraRotationX, 0, 0);
     }
 
-    private void FixedUpdate(){
+    private void Update()
+    {
         if(_input.mouseDX != 0)
             RotateVertical(_input.mouseDY, _character._verticalrotSpeed * Time.deltaTime);
+    }
+    private void FixedUpdate(){
     }
 
     private void RotateVertical(float mouseY, float speed){

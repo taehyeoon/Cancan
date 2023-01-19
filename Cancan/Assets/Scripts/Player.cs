@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Floor")){
-            Debug.Log("impact with floor");
             _isJumping = false;
         }
     }
